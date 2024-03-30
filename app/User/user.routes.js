@@ -4,8 +4,7 @@ import { ResponseHandler } from "../../common/utils/handlers.js";
 import userService from "./user.service.js";
 
 export const userRouter = express();
-const { CREATED ,OK} = SUCCESS_CODES;
-
+const { CREATED, OK } = SUCCESS_CODES;
 
 userRouter.post("/create-user", async (req, res, next) => {
   try {
@@ -18,12 +17,13 @@ userRouter.post("/create-user", async (req, res, next) => {
   }
 });
 
-userRouter.put("/edit-user",async(req,res,next)=>{
+userRouter.put("/edit-user/:userId", async (req, res, next) => {
   try {
-    const {id,userName} = req.body;
-    const response = await userService.updateUser(id,userName);
+    const { userName } = req.body;
+    const { userId } = req.params;
+    const response = await userService.updateUser(userId, userName);
     res.status(OK).send(new ResponseHandler(response));
   } catch (error) {
-    next(error)
+    next(error);
   }
-})
+});
