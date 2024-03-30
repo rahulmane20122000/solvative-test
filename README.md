@@ -32,6 +32,6 @@ This is a Node.js project developed for the Solvative test. It includes various 
 
 ## Completed
 - [x] User module - create, edit
-- [x] Reward module - create, read
+- [x] Reward module - create, read,edit.send reward
 ```
 This README.md file includes instructions for setting up the project in development mode, specifying environment variables, and marks the completion of the user module features. Adjustments can be made according to your project's specific needs.
