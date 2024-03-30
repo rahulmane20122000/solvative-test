@@ -60,9 +60,7 @@ const editReward = async (userId, points) => {
 
 const sendReward = async (givenBy, givenTo, givenPoints) => {
   try {
-    console.log(givenBy);
     const getPoints = await rewardDb.findUser(givenBy);
-    console.log(getPoints);
     if (getPoints) {
       const { points } = getPoints;
       if (givenPoints >= points) {
